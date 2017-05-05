@@ -1,5 +1,5 @@
 
-**Advanced Lane Finding Project**
+# Advanced Lane Finding Project
 
 The goals / steps of this project are the following:
 
@@ -35,7 +35,7 @@ I then applied the undistortion to road test images, an example is shown here.
 
 #### Perspective transform
 
-The next step was perspective transform. I identified from the test images proper source points that should represent a rectangle. I then chose source point (corners of the image) where the rectangle points should be mapped. Image warping was then used to move from front view to bird's eye view. Contrary to the Udacity pipeline, I did warping first followed by color and gradient thresholding. 
+The next step was perspective transform. I identified from the test images proper source points that should represent a rectangle. I then chose destination points (corners of the image) where the rectangle points should be mapped. Image warping was then used to move from front view to bird's eye view. Contrary to the Udacity pipeline, I did warping first followed by color and gradient thresholding. 
 
 
 I verified that my perspective transform was working as expected by verifying that the lines appear parallel in the warped image.
@@ -72,5 +72,5 @@ An example image with the lane plotted and warped back to the front view is prov
 
 ### Discussion
 
-The detection algorithm works reasonably well in standard conditions. Sometimes there are frames where the lane cannot be detected and sometimes difficult disturbances in the road, such as the lane-resembling asphalt border popping out in the challenge video. I worked a bit on smoothing and discarding bad frames but did not have time to build a perfect solution. 
+The detection algorithm works reasonably well in standard conditions. Sometimes there are frames where the lane cannot be detected and sometimes there are difficult disturbances in the road, such as the lane-resembling asphalt border popping out in the challenge video. I worked a bit on smoothing and discarding bad frames but did not have time to build a perfect solution. 
 
