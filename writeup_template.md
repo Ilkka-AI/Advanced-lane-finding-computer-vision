@@ -18,7 +18,9 @@ The goals / steps of this project are the following:
 [image2]: ./output_images/figure_2_undistorted_road.png "Road Transformed"
 [image3]: ./output_images/figure_3_warped_image.png "Binary Example"
 [image4]: ./output_images/figure_4_warped_binarized.png "Warp Example"
-[image5]: ./output_images/figure_5_warped_back.png "Fit Visual"
+[image5]: ./output_images/figure_5_warped_back.png "Fit 
+[image6]: ./output_images/figure6_fitted.png 
+Visual"
 [video1]: ./project_output.mp4 "Video"
 
 A jupyter notebook was used. Documentation of different functionalities of the code is well commented there and is not repeated here. 
@@ -43,8 +45,8 @@ I verified that my perspective transform was working as expected by verifying th
 
 #### Color and gradient thresholding
 
-I used a combination of color and gradient thresholds to generate a binary image. Sobel x-gradient and a HSL color space transform were used. In color thresholding only the saturation channel was considered with values s_thresh=(170, 255). The Gradient threshold was sx_thresh=(20, 100). 
- 	
+I used a combination of color and gradient thresholds to generate a binary image. Sobel x-gradient and a HSL color space transform were used. In color thresholding only the saturation channel was considered with values s_thresh=(170, 255). The Gradient threshold was sx_thresh=(20, 100). See figure 4.
+![Binary transformed warped image [image4] 	
 
 
 
@@ -52,13 +54,14 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 Lane-line pixels where identified from the binary image by computing a histogram of pixel x-values. By knowing that there are two lane lines, one can assume a bi-modal distribution and its two peaks can be considered to be the two lanes. 
 
-Degree-2 polynomials were then fitted to each collection of pixels corresponding to the two lane lines. In figure 4 I show a binary image where the polynomials have been fitted after warping and binarization. 
-![Binary transformed image with lanes detected and fitted][image4]
+
+Degree-2 polynomials were then fitted to each collection of pixels corresponding to the two lane lines. In figure 5 I show a binary image where the polynomials have been fitted after warping and binarization. 
+![Binary transformed warped image with lane lines detected and fitted][image6]
 
 #### The radius of curvature
 The radius of curvature of the lane lines was calculated from the polynomial fit parameters using the formula provided in the course material. The transformation from pixels to real-world metric values was included. The position of the vehicle with respect to center of the road was calculated by taking average of the intercepts of the two lanes and calculating its distance from the center of the image, knowing the camera should be in the center of the car. A transformation to metrix values was included. 
 
-An example image with the lane plotted and warped back to the front view is provided in image 5. 
+An example image with the lane plotted and warped back to the front view is provided in image 6. 
 
 ![Example image warped back to front view after the lanes were detected in bird's eye view][image5]
 
