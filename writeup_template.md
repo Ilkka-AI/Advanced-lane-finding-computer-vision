@@ -14,11 +14,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./outputimages/figure_1_undistorted.png "Undistorted"
-[image2]: ./outputimages/figure_2_undistorted_road.png "Road Transformed"
-[image3]: ./outputimages/figure_3_warped_image.png "Binary Example"
-[image4]: ./outputimages/figure_4_warped_binarized.png "Warp Example"
-[image5]: ./outputimages/figure_5_warped_back "Fit Visual"
+[image1]: ./output_images/figure_1_undistorted.png "Undistorted"
+[image2]: ./output_images/figure_2_undistorted_road.png "Road Transformed"
+[image3]: ./output_images/figure_3_warped_image.png "Binary Example"
+[image4]: ./output_images/figure_4_warped_binarized.png "Warp Example"
+[image5]: ./output_images/figure_5_warped_back "Fit Visual"
 [video1]: ./project_output.mp4 "Video"
 
 A jupyter notebook was used. Documentation of different functionalities of the code is well commented there and is not repeated here. 
