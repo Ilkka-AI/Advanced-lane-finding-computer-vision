@@ -41,12 +41,12 @@ The next step was perspective transform. I identified from the test images prope
 
 
 I verified that my perspective transform was working as expected by verifying that the lines appear parallel in the warped image.
-![alt text][image3]
+![Warped images][image3]
 
 #### Color and gradient thresholding
 
 I used a combination of color and gradient thresholds to generate a binary image. Sobel x-gradient and a HSL color space transform were used. In color thresholding only the saturation channel was considered with values s_thresh=(170, 255). The Gradient threshold was sx_thresh=(20, 100). See figure 4.
-![Binary transformed warped image [image4] 	
+![Binary transformed warped image ][image4] 	
 
 
 
@@ -56,7 +56,8 @@ Lane-line pixels where identified from the binary image by computing a histogram
 
 
 Degree-2 polynomials were then fitted to each collection of pixels corresponding to the two lane lines. In figure 5 I show a binary image where the polynomials have been fitted after warping and binarization. 
-![Binary transformed warped image with lane lines detected and fitted][image6]
+
+![Binary warped image with lane lines detected and fitted][image6]
 
 #### The radius of curvature
 The radius of curvature of the lane lines was calculated from the polynomial fit parameters using the formula provided in the course material. The transformation from pixels to real-world metric values was included. The position of the vehicle with respect to center of the road was calculated by taking average of the intercepts of the two lanes and calculating its distance from the center of the image, knowing the camera should be in the center of the car. A transformation to metrix values was included. 
