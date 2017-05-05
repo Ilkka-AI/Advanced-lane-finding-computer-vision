@@ -28,25 +28,23 @@ A jupyter notebook was used. Documentation of different functionalities of the c
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 I used provided chessboard images for calibration. Opencv provided a function to detect chessboard corners and these were compared to a known fact that corners should have regular positions to one another. 20 images can then be used to get the calibration and distortion coefficients. Example undistorted image is provided.  
-
+![Undistorted chessboard image][image1]
 ### Pipeline (single images)
 
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I then provide a distortion-corrected test road image.
-![alt text][image2]
-
-#### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+![Undistorted road image][image2]
 
 
-![alt text][image3]
 
 #### 3. The next step was perspective transform. I identified from the test images propoper source points that should represent a rectangle. I then chose source point (corners of the image) where the rectangle points should be mapped. Image warping was then used to move from front view to bird's eye view. Contrary to the Udacity pipeline, I did warping first followed by color and gradient thresholding. 
 
+![alt text][image3]
 
 I verified that my perspective transform was working as expected by verifying that the lines appear parallel in the warped image.
 
-![alt text][image3]
+
 
 
 I used a combination of color and gradient thresholds to generate a binary image. Sobel x-gradient was used and a HSL color space transform, where only the saturation channel was considered with values s_thresh=(170, 255). Gradient threshold was sx_thresh=(20, 100). 
@@ -58,9 +56,9 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 Degree-2 polynomials were then fitted to each collection of pixels corresponding to the two lanes. I figure 4 I show a binary image where the polynomials have been fitted. 
 
-![alt text][image4]
+![Binary transformed image with lanes detected and fitted][image4]
 
-#![alt text][image5]
+
 
 #### 5. The radius of curvature of the lane was calculated from the polynomial fit parameters using the formula provided in the course material. The transformation from pixels to real-world metric values was included. The position of the vehicle with respect to center of the road was calculated by taking average of the intercepts of the two lanes and calculating its distance from the center of the image, knowing the camera should be in the center of the car. A transformation to metrix values was included. 
 
@@ -68,7 +66,7 @@ Degree-2 polynomials were then fitted to each collection of pixels corresponding
 
 #### 6. An example image with the lane plotted and warped back to the front view is provided in image 6. 
 
-![alt text][image6]
+![Example image warped back to front view after the lanes were detected in bird's eye view][image5]
 
 ---
 
