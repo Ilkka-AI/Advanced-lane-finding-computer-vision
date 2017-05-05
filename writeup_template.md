@@ -18,9 +18,8 @@ The goals / steps of this project are the following:
 [image2]: ./output_images/figure_2_undistorted_road.png "Road Transformed"
 [image3]: ./output_images/figure_3_warped_image.png "Binary Example"
 [image4]: ./output_images/figure_4_warped_binarized.png "Warp Example"
-[image5]: ./output_images/figure_5_warped_back.png "Fit 
-[image6]: ./output_images/figure6_fitted.png 
-Visual"
+[image5]: ./output_images/figure_5_warped_back.png "Fitback" 
+[image6]: ./output_images/figure6_fitted.png "Fit"
 [video1]: ./project_output.mp4 "Video"
 
 A jupyter notebook was used. Documentation of different functionalities of the code is well commented there and is not repeated here. 
@@ -57,7 +56,7 @@ Lane-line pixels where identified from the binary image by computing a histogram
 
 Degree-2 polynomials were then fitted to each collection of pixels corresponding to the two lane lines. In figure 5 I show a binary image where the polynomials have been fitted after warping and binarization. 
 
-![Binary warped image with lane lines detected and fitted][image6]
+![Binary image with lane lines detected and fitted][image6]
 
 #### The radius of curvature
 The radius of curvature of the lane lines was calculated from the polynomial fit parameters using the formula provided in the course material. The transformation from pixels to real-world metric values was included. The position of the vehicle with respect to center of the road was calculated by taking average of the intercepts of the two lanes and calculating its distance from the center of the image, knowing the camera should be in the center of the car. A transformation to metrix values was included. 
